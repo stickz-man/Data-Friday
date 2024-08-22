@@ -31,7 +31,7 @@ Clone the repository and start exploring the weekly projects.
 
 `bash
 
-git clone https://github.com/stickz-man/Data-Fridays.git`
+git clone https://github.com/stickz-man/Data-Friday.git
 
     Stay Updated: Be sure to check in every Friday for the latest project updates and resources.
     Join the Conversation: Follow us on LinkedIn here www.linkedin.com/in/majoie-ngandi to stay connected and engage with the community.
