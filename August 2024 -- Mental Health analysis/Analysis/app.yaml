@@ -1,0 +1,42 @@
+runtime: python312  
+
+# Command to start Dash app using gunicorn
+entrypoint: gunicorn -b :$PORT app:server
+
+# Environment variables
+env_variables:
+  ENV: "production"
+
+# Automatic scaling settings to manage the number of instances based on traffic
+automatic_scaling:
+  min_instances: 1
+  max_instances: 2
+  target_cpu_utilization: 0.65
+
+# Instance class to define the performance (F1 is cheaper, F2 has more CPU power)
+instance_class: F2  # You can use F1 for free-tier, adjust based on your needs
+
+# Health checks to ensure app is running properly
+liveness_check:
+  path: "/"
+  check_interval_sec: 30
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+
+readiness_check:
+  path: "/"
+  check_interval_sec: 30
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+
+# Skip files that are not needed to deploy the app
+skip_files:
+  - ^(.*/)?.*\.py[co]$
+  - ^(.*/)?.*\.pyo$
+  - ^(.*/)?.*~
+
+# Optional error handling
+error_handlers:
+  - file: error.html  # Custom error page
