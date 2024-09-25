@@ -18,7 +18,7 @@ server = flask.Flask(__name__)
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], server=server)
 
 # Load your dataset (replace with the actual path to your dataset)
-df = pd.read_csv('C:/Users/14432/Desktop/Data Friday/Data-Friday/August 2024 -- Mental Health analysis/Mental Health Dataset.csv')
+df = pd.read_csv('August 2024 -- Mental Health analysis/Mental Health Dataset.csv')
 
 # Keep the original dataset for visualizations
 df_cleaned = df.copy()
