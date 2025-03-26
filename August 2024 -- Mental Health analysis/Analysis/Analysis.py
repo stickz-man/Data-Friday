@@ -13,6 +13,7 @@ from dash import dcc, html, Dash
 import dash_bootstrap_components as dbc
 import flask
 
+
 # Initialize Dash app with Bootstrap and Flask
 server = flask.Flask(__name__)
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], server=server)
